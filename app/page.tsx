@@ -1,69 +1,9 @@
 import Image from "next/image";
-
-export default function Home() {
-  return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
-}
+import Link from "next/link";
+import Reveal from "./reveal";
+export default function Home() { return <>
+  <Reveal><section className="hero"><Image className="hero-image" src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=2400&q=85" alt="People gathered around a table in conversation" fill priority unoptimized sizes="100vw" /><div className="wrap hero-content"><div className="hero-copy-block"><p className="eyebrow">People at the core. Purpose in the work.</p><h1>Matthew<br />Olszewski</h1><p className="hero-copy">Building toward a more human<br />side of technology.</p><div className="actions"><Link className="button" href="/projects">Explore my work &rarr;</Link><Link className="text-link" href="/about">Start with my why &rarr;</Link></div></div><div className="hero-portrait"><Image src="/matthew-headshot.jpg" alt="Portrait of Matthew Olszewski" fill priority sizes="(max-width: 700px) 180px, (max-width: 1000px) 260px, 390px" /></div></div><div className="wrap hero-caption"><span>Computer Science &amp; Engineering</span><span>The Ohio State University</span></div></section></Reveal>
+  <Reveal><section className="wrap section intro"><p className="eyebrow">01 / A little about me</p><div><h2>Good solutions<br />start with people.</h2><p className="lead">I&apos;m a senior in Computer Science and Engineering at Ohio State, with minors in Business and Mathematics. My focus is simple: keep people at the center of what I build.</p><Link className="text-link" href="/about">The purpose behind the work &rarr;</Link></div></section></Reveal>
+  <Reveal><section className="band"><div className="wrap section"><div className="section-heading"><div><p className="eyebrow">02 / Currently building</p><h2>A place to connect.</h2></div><Link className="text-link" href="/projects">Explore projects &rarr;</Link></div><Link href="/projects" className="project"><div className="project-art" aria-hidden="true"><strong>MNO.</strong><span>People. Purpose. Possibility.</span></div><div><p className="eyebrow">Personal website / In progress</p><h3>A home for my story.</h3><p className="description">Bringing my work, education, and perspective together in one place.</p><span className="text-link">View the project &rarr;</span></div></Link></div></section></Reveal>
+  <Reveal><section className="wrap section"><p className="eyebrow">03 / Make a connection</p><h2>It starts with<br />a conversation.</h2><Link className="button spaced" href="/connect">Connect with me &rarr;</Link></section></Reveal>
+  </>; }
